@@ -51,13 +51,6 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2020.1.9f1</UnityVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Editor:5</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>2020.1.9f1</UnityVersion>
-  </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
@@ -68,7 +61,7 @@
     <Compile Include="Assets\RoslynCSharp\Scripts\Editor\PluginConflictDetector.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\RoslynCSharp\Plugin\Editor\Trivial.ImGUI.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Editor\Trivial.ImGUI.dll" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -276,6 +269,9 @@
     <Reference Include="Antlr4.Runtime.Standard">
       <HintPath>Assets\Plugins\Antlr4.Runtime.Standard.dll</HintPath>
     </Reference>
+    <Reference Include="Domain">
+      <HintPath>Assets\Plugins\netstandard2.0\Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp">
       <HintPath>Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
@@ -350,9 +346,6 @@
     </Reference>
     <Reference Include="Trivial.ImGUI">
       <HintPath>Assets\RoslynCSharp\Plugin\Editor\Trivial.ImGUI.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain">
-      <HintPath>Assets\Plugins\netstandard2.0\Domain.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.0\net35\unity-custom\nunit.framework.dll</HintPath>
@@ -805,7 +798,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

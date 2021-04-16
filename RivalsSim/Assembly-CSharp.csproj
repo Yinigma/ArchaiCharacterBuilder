@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{0853317F-9B3F-E300-C5C2-36C4FB59DAE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -52,13 +51,6 @@
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2020.1.9f1</UnityVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-    <UnityVersion>2020.1.9f1</UnityVersion>
-  </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
@@ -71,6 +63,7 @@
     <Compile Include="Assets\Scripts\Emulator\GMLEmulator\GMLContext.cs" />
     <Compile Include="Assets\Scripts\Emulator\Parser\ScriptReader.cs" />
     <Compile Include="Assets\Scripts\Emulator\GMLEmulator\GMLObject.cs" />
+    <Compile Include="Assets\Scripts\Adapters\ProjectSessionRepository.cs" />
     <Compile Include="Assets\Scripts\Emulator\Parser\RivalsParserListener.cs" />
     <Compile Include="Assets\Scripts\Emulator\Fighter\RunInstance.cs" />
     <Compile Include="Assets\Scripts\Emulator\GMLEmulator\GMLRoom.cs" />
@@ -81,33 +74,32 @@
     <Compile Include="Assets\Scripts\Emulator\Parser\RivalsParserBaseListener.cs" />
     <Compile Include="Assets\Scripts\Emulator\GMLEmulator\GMLKeyNotFoundException.cs" />
     <Compile Include="Assets\Scripts\Adapters\ProjectFileLoader.cs" />
-    <Compile Include="Assets\Scripts\Adapters\ProjectSessionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\RoslynCSharp\Plugin\System.IO.FileSystem.Primitives.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.IO.FileSystem.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Trivial.CodeSecurity.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Algorithms.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Threading.Thread.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.X509Certificates.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\RoslynCSharp.Compiler.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Primitives.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.Pdb.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Diagnostics.StackTrace.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Collections.Immutable.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.Mdb.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XPath.XDocument.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Diagnostics.FileVersionInfo.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Reflection.Metadata.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Threading.Tasks.Extensions.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.AppContext.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.CSharp.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Console.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XmlDocument.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XPath.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Encoding.dll" />
-    <None Include="Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.IO.FileSystem.Primitives.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.IO.FileSystem.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Trivial.CodeSecurity.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Algorithms.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Threading.Thread.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.X509Certificates.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\RoslynCSharp.Compiler.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Primitives.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.Pdb.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Diagnostics.StackTrace.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Collections.Immutable.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.Mdb.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XPath.XDocument.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Diagnostics.FileVersionInfo.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Reflection.Metadata.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Threading.Tasks.Extensions.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.AppContext.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.CSharp.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Console.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XmlDocument.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Xml.XPath.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\System.Security.Cryptography.Encoding.dll" />
+     <None Include="Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.dll" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -300,6 +292,9 @@
     <Reference Include="Antlr4.Runtime.Standard">
       <HintPath>Assets\Plugins\Antlr4.Runtime.Standard.dll</HintPath>
     </Reference>
+    <Reference Include="Domain">
+      <HintPath>Assets\Plugins\netstandard2.0\Domain.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp">
       <HintPath>Assets\RoslynCSharp\Plugin\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
     </Reference>
@@ -371,9 +366,6 @@
     </Reference>
     <Reference Include="Trivial.Mono.Cecil.Pdb">
       <HintPath>Assets\RoslynCSharp\Plugin\Trivial.Mono.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="Domain">
-      <HintPath>Assets\Plugins\netstandard2.0\Domain.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.1.9f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -812,9 +804,7 @@
       <Name>RoslynCSharp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
