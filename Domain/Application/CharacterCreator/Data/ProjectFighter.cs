@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities
+namespace Domain.Application.CharacterCreator.Data
 {
-    public class Fighter : IProjectItem
+    class ProjectFighter : IProjectItem
     {
         public long Id { get; }
 
@@ -40,7 +41,7 @@ namespace Domain.Entities
 
         public IProjectItem Duplicate()
         {
-            
+
         }
     }
 }

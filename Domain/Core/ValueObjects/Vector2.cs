@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities.ValueObjects
+namespace Domain.Core.ValueObjects
 {
-    class Point
+    public class Point
     {
         public double X { get; }
         public double Y { get; }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities
+namespace Domain.Application.CharacterCreator.Data
 {
     public interface IProjectItem
     {
@@ -11,5 +11,7 @@ namespace Domain.Entities
         long Id { get; }
 
         IProjectItem Duplicate();
+
+        byte[] Serialize();
     }
 }

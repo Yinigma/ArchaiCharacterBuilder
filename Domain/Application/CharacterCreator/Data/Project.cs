@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Group = Domain.Entities.ProjectItemGroup;
+using Group = Domain.Application.CharacterCreator.Data.ProjectItemGroup;
 
-namespace Domain.Entities
+namespace Domain.Application.CharacterCreator.Data
 {
     public class Project
     {
 
-        public Group Root { get; private set; } = new Group();
+        public Group Root { get; private set; } = new Group(0);
 
         public void AddItem(IProjectItem item, Group targetGroup = null)
         {

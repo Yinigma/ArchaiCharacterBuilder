@@ -9,11 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Util\" />
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+    <Folder Include="Application\Analyzer\" />
+    <Folder Include="Application\Simulator\" />
   </ItemGroup>
 
 </Project>

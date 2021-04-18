@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities
+namespace Domain.Core.Entities
 {
-    class Script
+    class Attack
     {
-        public string Source { get; set; }
     }
 }

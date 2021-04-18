@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Entities
+namespace Domain.Application.CharacterCreator.Data
 {
     public class ProjectItemGroup : IProjectItem
     {
