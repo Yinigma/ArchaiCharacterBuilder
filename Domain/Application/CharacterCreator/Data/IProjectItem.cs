@@ -6,12 +6,8 @@ namespace Domain.Application.CharacterCreator.Data
 {
     public interface IProjectItem
     {
-        string Name { get;  }
+        string Name { get; }
 
         long Id { get; }
-
-        IProjectItem Duplicate();
-
-        byte[] Serialize();
     }
 }

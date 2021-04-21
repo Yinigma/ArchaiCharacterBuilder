@@ -2,21 +2,41 @@
 {
     public class FighterGroundMovement
     {
-        //Ground movement
-        //Walk movement vars
-        public float WalkSpeed { get; private set; }
-        public float WalkAccel { get; private set; }
-        public int WalkTurnTime { get; private set; }
+        public FighterWalkMovement WalkMovement { get; }
+        public FighterDashMovement DashMovement { get; }
+        public double GroundFriction { get; }
+        public double MoonwalkAccel { get; }
+        public FighterWaveDashMovement WavedashMovement { get; }
 
-        public FighterDashMovement DashMovement { get; private set; }
+        public FighterGroundMovement(FighterWalkMovement walk, FighterDashMovement dash, FighterWaveDashMovement wavedash, double groundFriction, double moonWalkAccel)
+        {
+            WalkMovement = walk;
+            DashMovement = dash;
+            WavedashMovement = wavedash;
+            GroundFriction = groundFriction;
+            MoonwalkAccel = moonWalkAccel;
+        }
 
-        //Ground friction
-        public float GroundFriction { get; private set; }
-        public float MoonwalkAccel { get; private set; }
+        public bool Equals(FighterGroundMovement other)
+        {
+            return
+                WalkMovement.Equals(other.WalkMovement) &&
+                DashMovement.Equals(other.DashMovement) &&
+                WavedashMovement.Equals(other.WavedashMovement) &&
+                GroundFriction == other.GroundFriction &&
+                MoonwalkAccel == other.MoonwalkAccel;
+        }
 
-        //Wavedash junk
-        public int WaveLandTime { get; set; }
-        public float WaveLandAdj { get; set; }
-        public float WaveFriction { get; set; }
+        public FighterGroundMovement Duplicate()
+        {
+            return new FighterGroundMovement
+            (
+                WalkMovement.Duplicate(),
+                DashMovement.Duplicate(),
+                WavedashMovement.Duplicate(),
+                GroundFriction,
+                MoonwalkAccel
+            );
+        }
     }
 }

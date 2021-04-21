@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Domain.Core.Enum
 {
-    class FighterMenuSprite
+    public enum FighterMenuSprite : byte
     {
+        PORTAIT,
+        ICON,
+        RESULTS,
+        CHARACTER_SELECT
     }
 }

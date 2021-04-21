@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Core.Exceptions
+namespace Domain.Core.Entities
 {
-    public class ValueOutOfBoundsException : Exception
+    public abstract class Article
     {
 
     }

@@ -1,47 +1,38 @@
-﻿using Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Domain.Core.Entities;
+using Domain.Core.ValueObjects;
 
 namespace Domain.Application.CharacterCreator.Data
 {
-    class ProjectFighter : IProjectItem
+    class ProjectFighter : FighterConfiguration, IProjectItem
     {
-        public long Id { get; }
-
-        public string Name { get; set; }
-
-        //Walk movement vars
-        public float WalkSpeed { get; private set; }
-        public float WalkAcceleration { get; private set; }
-        public int WalkTurnTime { get; private set; }
-
-        //public FighterDashMovement DashMovement { get; private set; }
-
-        //Ground friction
-        public float GroundFriction { get; private set; }
-        public float MoonwalkAccel { get; private set; }
-
-        //Wavedash junk
-        public int WaveLandTime { get; private set; }
-        public float WaveLandAdj { get; private set; }
-        public float WaveFriction { get; private set; }
-
-        public Fighter(long id)
-        {
-            Id = id;
-        }
-
-        public void UpdateWalk(float walkSpeed, float walkAcceleration, int walkTurnTime)
-        {
-            WalkSpeed = walkSpeed;
-            WalkAcceleration = walkAcceleration;
-            WalkTurnTime = walkTurnTime;
-        }
+        private const string IDLE_HURTBOX_NAME = "Idle Hurtbox";
+        private const string CROUCH_HURTBOX_NAME = "Crouch Hurtbox";
 
         public IProjectItem Duplicate()
         {
-
+            ProjectFighter dupFighter = new ProjectFighter();
+            dupFighter.AirAccel = AirAccel;
+            dupFighter.AirDodge = AirDodge;
+            dupFighter.AirDodgeSound = new SoundEffect(AirDodgeSound.Path);
+            dupFighter.AirDodgeSpeed = AirDodgeSpeed;
+            dupFighter.AirFriction = AirFriction;
+            dupFighter.AirHurtbox = AirHurtbox;
+            dupFighter.AirMaxSpeed = AirMaxSpeed;
+            dupFighter.Attacks;
+            dupFighter.BubbleOffset = BubbleOffset;
+            foreach(ColorProfile profile in ColorPalette)
+            {
+                ColorProfile dupProfile = new ColorProfile();
+                foreach(ColorRow row in profile.ColorRows)
+                {
+                    ColorRow dupRow = new ColorRow(row.BaseColors, row.HueTolerance, row.SaturationTolerance, row.ValueTolerance);
+                    dupProfile.ColorRows.Add(dupRow);
+                }
+                dupFighter.ColorPalette.Add(dupProfile);
+            }
+            dupFighter.Crouch = dupFighter.Crouch.Duplicate();
+            dupFighter.CrouchHurtbox.Id = 
+            
         }
     }
 }

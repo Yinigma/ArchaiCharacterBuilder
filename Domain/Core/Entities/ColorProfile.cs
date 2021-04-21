@@ -1,12 +1,10 @@
-﻿using CleanArchitecture.Domain.Common;
-using CleanArchitecture.Domain.ValueObjects;
-using System;
+﻿
+using Domain.Core.ValueObjects;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Domain.Core.Entities
 {
-    public class ColorProfile : Entity
+    public class ColorProfile
     {
         //Up to 8 different colors in a slot
         public IList<ColorRow> ColorRows = new List<ColorRow>();
@@ -14,7 +12,7 @@ namespace Domain.Core.Entities
 
         public void AddColor(Color baseColor)
         {
-            ColorRows.Add( new ColorRow() );
+            ColorRows.Add(new ColorRow(new List<Color>(){baseColor}, new Angle(0), new Portion(0), new Portion(0) ) );
         }
 
         public void SetColor(Color baseColor, int row, string profile)
@@ -31,7 +29,7 @@ namespace Domain.Core.Entities
             int profileDex = Profiles.IndexOf(profile);
             if (profileDex != -1)
             {
-                return ColorRows[row].GetColor(profileDex);
+                return ColorRows[row].BaseColors[profileDex];
             }
             return null;
         }
@@ -46,7 +44,7 @@ namespace Domain.Core.Entities
             Profiles.Add(name);
             foreach(ColorRow row in ColorRows)
             {
-                row.AddColor();
+                row.AddColor(Color.createFromRGB(UnsignedPortion.Max, UnsignedPortion.Max, UnsignedPortion.Max));
             }
         }
 

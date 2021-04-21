@@ -1,16 +1,15 @@
-﻿using CleanArchitecture.Domain.Enums.Hitbox;
+﻿using Domain.Core.Enum.Hitbox;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CleanArchitecture.Domain.Entities
+namespace Domain.Core.Entities
 {
     class ProjectileHitbox : Hitbox
     {
+        public Sprite ProjectileSpriteId { get; set; }
 
-        public int ProjectileSpriteId { get; set; }
-
-        public int CollisionMaskSpriteId { get; set; }
+        public Sprite CollisionMaskSpriteId { get; set; }
 
         public float AnimationSpeed { get; set; }
 

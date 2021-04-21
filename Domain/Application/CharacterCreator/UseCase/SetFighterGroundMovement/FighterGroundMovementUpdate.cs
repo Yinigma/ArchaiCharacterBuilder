@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.UseCase.SetFighterWalkMovement
+namespace Domain.UseCase.SetFighterGroundMovement
 {
-    public sealed class FighterMovementUpdate
+    public sealed class FighterGroundMovementUpdate
     {
         public long ProjectId { get; private set; }
         public long FighterId { get; private set; }

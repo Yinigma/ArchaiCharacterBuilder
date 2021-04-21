@@ -2,17 +2,13 @@
 
 namespace Domain.Core.ValueObjects
 {
-    public class Portion
+    public abstract class Portion
     {
-        public double Value { get; }
+        public virtual double Value { get; }
 
-        public Portion(double value)
+        public bool Equals(UnsignedPortion portion)
         {
-            if(value < 0 - double.Epsilon || value > 1 + double.Epsilon)
-            {
-                throw new ValueOutOfBoundsException();
-            }
-            Value = value;
+            return portion.Value == Value;
         }
     }
 }

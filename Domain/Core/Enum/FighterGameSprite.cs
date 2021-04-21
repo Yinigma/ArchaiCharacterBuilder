@@ -1,12 +1,7 @@
 ﻿namespace Domain.Core.Enum.Hitbox
 {
-    public enum FighterSprite : byte
+    public enum FighterGameSprite : byte
     {
-        PORTAIT,
-        ICON,
-        RESULTS,
-        CHARACTER_SELECT,
-
         AIRDODGE_BACK,
         AIRDODGE_UP,
         AIRDODGE_DOWN,

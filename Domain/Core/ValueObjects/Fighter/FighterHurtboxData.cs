@@ -2,10 +2,10 @@
 {
     public class FighterHurtboxData
     {
-        public uint FighterHeight { get; set; }
-        public int HurtboxSpriteIndex { get; set; }
-        public int AirHurtboxSpriteIndex { get; set; }
-        public int CrouchHurtboxSpriteIndex { get; set; }
-        public int HitstunHurtboxSpriteIndex { get; set; }
+        public int FighterHeight { get; set; }
+        public Sprite HurtboxSpriteIndex { get; set; }
+        public Sprite AirHurtboxSpriteIndex { get; set; }
+        public Sprite CrouchHurtboxSpriteIndex { get; set; }
+        public Sprite HitstunHurtboxSpriteIndex { get; set; }
     }
 }

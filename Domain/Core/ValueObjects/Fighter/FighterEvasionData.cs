@@ -2,14 +2,45 @@
 {
     public class FighterEvasionData
     {
-        public FighterActionWindow SpotDodge { get; set; }
+        public FighterActionWindow Parry { get; }
 
-        public FighterTechData TechData { get; set; }
+        public FighterTechData TechData { get; }
 
-        public FighterAirDodge AirDodge { get; set; }
+        public FighterAirDodge AirDodge { get; }
 
-        public FighterRollData RollData { get; set; }
+        public FighterRollData RollData { get; }
 
-        public FighterActionWindow Crouch { get; set; }
+        public FighterActionWindow Crouch { get; }
+
+        public FighterEvasionData(FighterActionWindow parry, FighterTechData techData, FighterAirDodge airDodge, FighterRollData rollData, FighterActionWindow crouch)
+        {
+            Parry = parry;
+            TechData = techData;
+            AirDodge = airDodge;
+            RollData = rollData;
+            Crouch = crouch;
+        }
+
+        public bool Equals(FighterEvasionData other)
+        {
+            return 
+                Parry.Equals(other.Parry) &&
+                TechData.Equals(other.TechData) &&
+                AirDodge.Equals(other.AirDodge) &&
+                RollData.Equals(other.RollData) &&
+                Crouch.Equals(other.Crouch);
+        }
+
+        public FighterEvasionData Duplicate()
+        {
+            return new FighterEvasionData
+            (
+                Parry.Duplicate(),
+                TechData.Duplicate(),
+                AirDodge.Duplicate(),
+                RollData.Duplicate(),
+                Crouch.Duplicate()
+            );
+        }
     }
 }

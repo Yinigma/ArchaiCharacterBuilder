@@ -4,32 +4,39 @@ using System.Text;
 
 namespace Domain.Core.ValueObjects
 {
-    public class ColorRow
+    public sealed class ColorRow
     {
-        public float HueTolerance;
-        private float saturationTolerance;
-        private float valueTolerance;
+        public Angle HueTolerance { get; }
+        public Portion SaturationTolerance { get; }
+        public Portion ValueTolerance { get; }
 
-        private List<Color> baseColors = new List<Color>();
+        private List<Color> baseColors;
 
-        internal void AddColor()
+        public List<Color> BaseColors { get { return new List<Color>(baseColors); } }
+
+        public ColorRow(List<Color> colors, Angle hueTolerance, Portion satTolerance, Portion valTolerance )
         {
-            baseColors.Add(new Color());
+            baseColors = new List<Color>(colors);
         }
 
-        internal void RemoveColor(int colorDex)
+        public ColorRow AddColor(Color color)
         {
-            baseColors.RemoveAt(colorDex);
+            //Should we do something to handle duplication here?
+            List<Color> newColors = BaseColors;
+            newColors.Add(color);
+            return new ColorRow(newColors, HueTolerance, SaturationTolerance, ValueTolerance);
         }
 
-        internal void SetColor(int index, Color color)
+        public int IndexOf(Color color)
         {
-            baseColors[index] = color;
-        }
-
-        internal Color GetColor(int profileDex)
-        {
-            return baseColors[profileDex];
+            for(int i = 0; i < baseColors.Count; i++)
+            {
+                if(baseColors[i].Equals(color))
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }

@@ -3,13 +3,7 @@ namespace Domain.Core.Entities
 {
     public class Script
     {
-        public long Id { get; }
+        public long Id { get; set; }
         public string Source { get; set; }
-
-        public Script(long id)
-        {
-            Id = id;
-            Source = "";
-        }
     }
 }

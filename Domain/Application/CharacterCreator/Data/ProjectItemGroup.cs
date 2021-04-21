@@ -21,8 +21,6 @@ namespace Domain.Application.CharacterCreator.Data
             return items.Remove(item);
         }
 
-
-
         public IProjectItem Duplicate()
         {
             ProjectItemGroup duplicate = new ProjectItemGroup(Id);

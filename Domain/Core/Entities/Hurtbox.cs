@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Domain.Core.Entities
 {
-    class Sprite
+    public class Hurtbox
     {
+        public long Id { get; set; }
+
+        public Sprite HurtboxSprite;
     }
 }

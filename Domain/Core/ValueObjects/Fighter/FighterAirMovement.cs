@@ -4,12 +4,27 @@ namespace Domain.Core.ValueObjects.Fighter
 {
     public class FighterAirMovement
     {
-        public FighterJumpData JumpData { get; set; }
+        public FighterJumpData JumpData { get; }
+        public FighterAirPhysics AirPhysics { get; }
+        public int LandTime { get; }
+        public int PratLandTime { get; }
 
-        public FighterAirPhysics AirPhysics { get; set; }
-        
-        public int LandTime { get; set; }
+        public FighterAirMovement(FighterJumpData jumpData, FighterAirPhysics airPhysics, int landTime, int pratLandTime)
+        {
+            JumpData = jumpData;
+            AirPhysics = airPhysics;
+            LandTime = landTime;
+            PratLandTime = pratLandTime;
+        }
 
-        public int PratLandTime { get; set; }
+        public bool Equals(FighterAirMovement other)
+        {
+            return AirPhysics.Equals(other.AirPhysics) && JumpData.Equals(other.JumpData) && LandTime == other.LandTime && PratLandTime == other.PratLandTime;
+        }
+
+        public FighterAirMovement Duplicate()
+        {
+            return new FighterAirMovement(JumpData.Duplicate(), AirPhysics.Duplicate(), LandTime, PratLandTime);
+        }
     }
 }
