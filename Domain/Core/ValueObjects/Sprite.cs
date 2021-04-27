@@ -8,6 +8,11 @@
         {
             Path = path;
         }
+
+        public bool Equals(Sprite other)
+        {
+            return Path.Equals(other.Path);
+        }
         //Save this for Character Creator Domain
         /*public long Id { get; }
         public Color[,] SpriteData { get; set; }

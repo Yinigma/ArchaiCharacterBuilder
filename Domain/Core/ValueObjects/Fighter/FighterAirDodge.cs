@@ -1,14 +1,14 @@
-﻿namespace Domain.Core.ValueObjects.Fighter
+﻿/*namespace Domain.Core.ValueObjects.Fighter
 {
     public class FighterAirDodge
     {
         public FighterActionWindow AirDodge { get; }
-        public double AirDodgeSpeed { get; }
+        
 
         public FighterAirDodge(FighterActionWindow window, double dodgeSpeed)
         {
             AirDodge = window;
-            AirDodgeSpeed = dodgeSpeed;
+            //AirDodgeSpeed = dodgeSpeed;
         }
 
         public FighterAirDodge Duplicate()
@@ -21,4 +21,4 @@
             return AirDodge.Equals(other.AirDodge) && AirDodgeSpeed == other.AirDodgeSpeed;
         }
     }
-}
+}*/

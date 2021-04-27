@@ -9,5 +9,7 @@ namespace Domain.Application.CharacterCreator.Data
         string Name { get; }
 
         long Id { get; }
+
+        IProjectItem Duplicate(long duplicateId);
     }
 }

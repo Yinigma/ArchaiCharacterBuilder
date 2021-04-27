@@ -5,13 +5,15 @@ using System.Text;
 
 namespace Domain.Core.Entities
 {
-    class ProjectileHitbox : Hitbox
+    class ProjectileConfiguration
     {
-        public Sprite ProjectileSpriteId { get; set; }
+        //public Sprite ProjectileSpriteId { get; set; }
 
-        public Sprite CollisionMaskSpriteId { get; set; }
+        //public Sprite CollisionMaskSpriteId { get; set; }
 
-        public float AnimationSpeed { get; set; }
+        //public float AnimationSpeed { get; set; }
+
+        //public int DestroySprite { get; set; }
 
         public int SpeedX { get; set; }
 
@@ -23,6 +25,8 @@ namespace Domain.Core.Entities
 
         public float AirFriction { get; set; }
 
+
+
         public ProjectileSurfaceBehavior WallBehavior { get; set; }
 
         public ProjectileSurfaceBehavior GroundBehavior { get; set; }
@@ -33,10 +37,8 @@ namespace Domain.Core.Entities
 
         public bool ParryStunsOwner { get; set; }
 
-        public bool DoesNotReflect { get; set; }
+        public bool ReflectsOnParry { get; set; }
 
         public bool Unbreakable { get; set; }
-
-        public int DestroySprite { get; set; }
     }
 }

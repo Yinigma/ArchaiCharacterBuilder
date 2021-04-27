@@ -2,10 +2,10 @@
 {
     public class FighterRollData
     {
-        public FighterActionWindow RollForward { get; set; }
-        public FighterActionWindow RollBackward { get; set; }
-        public int RollForwardMax { get; set; }
-        public int RollBackwardMax { get; set; }
+        public FighterActionWindow RollForward { get; }
+        public FighterActionWindow RollBackward { get; }
+        public int RollForwardMax { get; }
+        public int RollBackwardMax { get; }
 
         public FighterRollData(FighterActionWindow rollForward, FighterActionWindow rollBackward, int forwardMax, int backMax)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Core.Enum.Window
 {
-    enum CancelType
+    public enum CancelType
     {
         DOES_NOT_CANCEL,
         ATTACK_CANCEL,

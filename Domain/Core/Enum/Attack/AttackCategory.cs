@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Core.Enum.Attack
 {
-    public enum GroundCategory
+    public enum GroundingCategory
     {
        GROUNDED,
        AERIAL,

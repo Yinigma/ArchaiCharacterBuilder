@@ -1,15 +1,13 @@
-﻿using CleanArchitecture.Domain.ValueObjects.Fighter;
-
-namespace Domain.Core.ValueObjects.Fighter
+﻿namespace Domain.Core.ValueObjects.Fighter
 {
     public class FighterAirMovement
     {
-        public FighterJumpData JumpData { get; }
+        public FighterJump JumpData { get; }
         public FighterAirPhysics AirPhysics { get; }
         public int LandTime { get; }
         public int PratLandTime { get; }
 
-        public FighterAirMovement(FighterJumpData jumpData, FighterAirPhysics airPhysics, int landTime, int pratLandTime)
+        public FighterAirMovement(FighterJump jumpData, FighterAirPhysics airPhysics, int landTime, int pratLandTime)
         {
             JumpData = jumpData;
             AirPhysics = airPhysics;

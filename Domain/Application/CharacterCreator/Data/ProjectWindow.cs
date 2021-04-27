@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Core.Entities
+namespace Domain.Application.CharacterCreator.Data
 {
-    public class Article
+    class ProjectWindow
     {
-
     }
 }

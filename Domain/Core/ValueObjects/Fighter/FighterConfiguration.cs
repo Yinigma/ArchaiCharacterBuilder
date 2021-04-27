@@ -1,6 +1,6 @@
 ﻿using Domain.Core.Exceptions;
 using Domain.Core.ValueObjects;
-
+using Domain.Core.ValueObjects.Fighter;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,8 +10,35 @@ namespace Domain.Core.Entities
     //There's no business logic that seems to go into this stuff. They just seem like PODs.
     public class FighterConfiguration
     {
-        public string Name { get; set; }
-        public virtual float KnockbackAdjustment { get; set; }
+        public double KnockbackAdjustment { get; }
+        public FighterHurtboxData HurtboxData { get; }
+        public FighterGroundMovement GroundMovement { get; }
+        public FighterAirMovement AirMovement { get; }
+        public FighterEvasionData EvasionData { get; }
+        //public Vector2 BubbleOffset { get; }
+
+        public FighterConfiguration( double knockbackAdj, FighterHurtboxData hurtboxData, FighterGroundMovement groundMovement, FighterAirMovement airMovement, FighterEvasionData evasionData)
+        {
+            KnockbackAdjustment = knockbackAdj;
+            HurtboxData = hurtboxData;
+            GroundMovement = groundMovement;
+            EvasionData = evasionData;
+        }
+
+        public FighterConfiguration Duplicate()
+        {
+            return new FighterConfiguration(KnockbackAdjustment, HurtboxData, GroundMovement, AirMovement, EvasionData);
+        }
+
+        public bool Equals(FighterConfiguration other)
+        {
+            return KnockbackAdjustment == other.KnockbackAdjustment && 
+                HurtboxData.Equals(other.HurtboxData) && 
+                GroundMovement.Equals(other.GroundMovement) && 
+                AirMovement.Equals(other.AirMovement) && 
+                EvasionData.Equals(other.EvasionData);
+        }
+        //public string Name { get; }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Ground Movement
@@ -123,48 +150,39 @@ namespace Domain.Core.Entities
         public virtual SoundEffect DoubleJumpSound { get; set; }
         public virtual SoundEffect AirDodgeSound { get; set; }*/
 
-        public string[] Info { get; private set; } = new string[3];
+        //public string[] Info { get; private set; } = new string[3];
 
-        public Guid PortraitSprite { get; set; }
+
+        /*public Guid PortraitSprite { get; set; }
 
         public Guid FighterSelectSprite { get; set; }
 
         public Guid ResultsScreenSprite { get; set; }
 
-        public Guid IconSprite { get; set; }
+        public Guid IconSprite { get; set; }*/
 
-        public IDictionary<string, AnimationData> AnimData = new Dictionary<string, AnimationData>();
+        //public IDictionary<string, AnimationData> AnimData = new Dictionary<string, AnimationData>();
 
-        public IDictionary<BaseFighterSound, Guid> FighterSounds = new Dictionary<BaseFighterSound, Guid>();
+        //public IDictionary<BaseFighterSound, Guid> FighterSounds = new Dictionary<BaseFighterSound, Guid>();
 
         /// <summary> Multiplier for all knockback dealt to the character </summary>
-        public float KnockbackAdjustment { get; set; }
 
-        public FighterHurtboxData FighterHurtboxData { get; set; }
 
-        public FighterGroundMovement GroundMovement { get; set; }
+        //public IDictionary<Guid, Attack> Attacks { get; private set; } = new Dictionary<Guid, Attack>();
 
-        public FighterAirMovement AirMovement { get; set; }
+        //public IDictionary<string, object> Parameters { get; private set; } = new Dictionary<string, object>();
 
-        public FighterEvasionData EvasionData { get; set; }
+        //public IList<ColorProfile> ColorPalette { get; private set; } = new List<ColorProfile>();
 
-        public Vector2D BubbleOffset { get; set; }
+        //public FighterSoundData SoundData { get; set; }
 
-        public IDictionary<Guid, Attack> Attacks { get; private set; } = new Dictionary<Guid, Attack>();
-
-        public IDictionary<string, object> Parameters { get; private set; } = new Dictionary<string, object>();
-
-        public IList<ColorProfile> ColorPalette { get; private set; } = new List<ColorProfile>();
-
-        public FighterSoundData SoundData { get; set; }
-
-        public virtual void RenameAttack(Attack attack, string name)
+        /*public virtual void RenameAttack(Attack attack, string name)
         {
             if(Attacks.Any((atk)=>atk.AttackName.Equals(name) && atk.Id != attack.Id))
             {
                 throw new DuplicateAttackNameException();
             }
             Attacks.First((atk)=>atk.Id == attack.Id).AttackName = name;
-        }
+        }*/
     }
 }

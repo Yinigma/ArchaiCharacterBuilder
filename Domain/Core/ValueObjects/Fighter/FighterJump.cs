@@ -1,6 +1,6 @@
-﻿namespace CleanArchitecture.Domain.ValueObjects.Fighter
+﻿namespace Domain.Core.ValueObjects.Fighter
 {
-    public class FighterJumpData
+    public class FighterJump
     {
         public int JumpStartTime { get; }
         public double JumpSpeed { get; }
@@ -10,12 +10,13 @@
         public double MaxJumpHsp { get; }
         public double JumpChange { get; }
         public int MaxDoubleJumps { get; }
-        public int DoubleJumpTime { get; }
+        public int DoubleJumpStartTime { get; }
+        public int DoubleJumpEndTime { get; }
         public double WalljumpHsp { get; }
         public double WalljumpVsp { get; }
         public int WalljumpTime { get; }
 
-        public FighterJumpData
+        public FighterJump
         (
             int jumpStartTime,
             double jumpSpeed,
@@ -25,7 +26,8 @@
             double maxJumpHsp,
             double jumpChange,
             int maxDoubleJumps,
-            int doubleJumpTime,
+            int doubleJumpStartTime,
+            int doubleJumpEndTime,
             double walljumpHsp,
             double walljumpVsp,
             int walljumpTime
@@ -39,13 +41,14 @@
             MaxJumpHsp = maxJumpHsp;
             JumpChange = jumpChange;
             MaxDoubleJumps = maxDoubleJumps;
-            DoubleJumpTime = doubleJumpTime;
+            DoubleJumpStartTime = doubleJumpStartTime;
+            DoubleJumpEndTime = doubleJumpEndTime;
             WalljumpHsp = walljumpHsp;
             WalljumpVsp = walljumpVsp;
             WalljumpTime = walljumpTime;
         }
 
-        public bool Equals(FighterJumpData other)
+        public bool Equals(FighterJump other)
         {
             return 
                 JumpStartTime == other.JumpStartTime &&
@@ -56,15 +59,16 @@
                 MaxJumpHsp == other.MaxJumpHsp &&
                 JumpChange == other.JumpChange &&
                 MaxDoubleJumps == other.MaxDoubleJumps &&
-                DoubleJumpTime == other.DoubleJumpTime &&
+                DoubleJumpStartTime == other.DoubleJumpStartTime &&
+                DoubleJumpEndTime == other.DoubleJumpEndTime &&
                 WalljumpHsp == other.WalljumpHsp &&
                 WalljumpVsp == other.WalljumpVsp &&
                 WalljumpTime == other.WalljumpTime;
         }
 
-        public FighterJumpData Duplicate()
+        public FighterJump Duplicate()
         {
-            return new FighterJumpData
+            return new FighterJump
             (
                 JumpStartTime,
                 JumpSpeed,
@@ -74,7 +78,8 @@
                 MaxJumpHsp,
                 JumpChange,
                 MaxDoubleJumps,
-                DoubleJumpTime,
+                DoubleJumpStartTime,
+                DoubleJumpEndTime,
                 WalljumpHsp,
                 WalljumpVsp,
                 WalljumpTime

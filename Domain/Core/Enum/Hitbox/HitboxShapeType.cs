@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Core.Enum.Hitbox
 {
-    public enum HitboxShape
+    public enum HitboxShapeType
     {
         ELLIPSE, 
         RECTANGLE, 

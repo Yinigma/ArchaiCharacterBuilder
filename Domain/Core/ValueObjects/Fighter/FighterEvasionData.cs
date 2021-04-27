@@ -2,44 +2,36 @@
 {
     public class FighterEvasionData
     {
-        public FighterActionWindow Parry { get; }
+        public double TechrollSpeed { get; }
+        public double AirDodgeSpeed { get; }
+        public double RollForwardMax { get; }
+        public double RollBackwardMax { get; }
 
-        public FighterTechData TechData { get; }
-
-        public FighterAirDodge AirDodge { get; }
-
-        public FighterRollData RollData { get; }
-
-        public FighterActionWindow Crouch { get; }
-
-        public FighterEvasionData(FighterActionWindow parry, FighterTechData techData, FighterAirDodge airDodge, FighterRollData rollData, FighterActionWindow crouch)
+        public FighterEvasionData(double techrollSpeed, double airDodge, double rollForwardMax, double rollBackwardMax)
         {
-            Parry = parry;
-            TechData = techData;
-            AirDodge = airDodge;
-            RollData = rollData;
-            Crouch = crouch;
+            TechrollSpeed = techrollSpeed;
+            AirDodgeSpeed = airDodge;
+            RollForwardMax = rollForwardMax;
+            RollBackwardMax = rollBackwardMax;
         }
 
         public bool Equals(FighterEvasionData other)
         {
             return 
-                Parry.Equals(other.Parry) &&
-                TechData.Equals(other.TechData) &&
-                AirDodge.Equals(other.AirDodge) &&
-                RollData.Equals(other.RollData) &&
-                Crouch.Equals(other.Crouch);
+                TechrollSpeed == other.TechrollSpeed &&
+                AirDodgeSpeed == other.AirDodgeSpeed &&
+                RollForwardMax == other.RollForwardMax &&
+                RollBackwardMax == other.RollBackwardMax;
         }
 
         public FighterEvasionData Duplicate()
         {
             return new FighterEvasionData
             (
-                Parry.Duplicate(),
-                TechData.Duplicate(),
-                AirDodge.Duplicate(),
-                RollData.Duplicate(),
-                Crouch.Duplicate()
+                TechrollSpeed,
+                AirDodgeSpeed,
+                RollForwardMax,
+                RollBackwardMax
             );
         }
     }

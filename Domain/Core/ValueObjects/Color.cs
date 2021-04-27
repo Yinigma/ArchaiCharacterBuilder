@@ -11,6 +11,8 @@ namespace Domain.Core.ValueObjects
         public UnsignedPortion Blue { get; }
         public bool Solid { get; }
 
+        public static readonly Color White = new Color(UnsignedPortion.Max, UnsignedPortion.Max, UnsignedPortion.Max, true); 
+
         public static Color createFromRGB(UnsignedPortion red, UnsignedPortion green, UnsignedPortion blue) 
         {
             return new Color(red, green, blue, true);
