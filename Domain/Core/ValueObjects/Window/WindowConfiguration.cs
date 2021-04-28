@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Domain.Core.ValueObject.Window
+namespace Domain.Core.ValueObjects.Window
 {
     public class WindowConfiguration
     {

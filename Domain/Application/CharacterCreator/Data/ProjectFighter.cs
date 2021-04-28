@@ -1,6 +1,7 @@
 ﻿using Domain.Core.Entities;
 using Domain.Core.ValueObjects;
 using Domain.Core.ValueObjects.Fighter;
+using System.Collections.Generic;
 
 namespace Domain.Application.CharacterCreator.Data
 {
@@ -14,6 +15,8 @@ namespace Domain.Application.CharacterCreator.Data
         public FighterConfiguration Configuration { get; set; }
         public ColorProfile ColorProfile { get; set; }
         public Vector2 BubbleOffset { get; set; }
+
+        private IList<ProjectAttack> attacks;
 
         private ProjectFighter(long id, string name, FighterConfiguration config, ColorProfile colProfile, Vector2 offset)
         {
