@@ -391,9 +391,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Domain.csproj",
-      "projectName": "Domain",
-      "projectPath": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Archai.csproj",
+      "projectName": "Archai",
+      "projectPath": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Archai.csproj",
       "packagesPath": "C:\\Users\\fobja\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\obj\\",
       "projectStyle": "PackageReference",

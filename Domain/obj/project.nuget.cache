@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iiViOaKeGA6fVbyMiUpw0bE6dRhm/I4VdEukngU4OMA2CeIIvUCOPh0Q9HjDaLTZMM3EUMODRAdrHv39ouo6ew==",
+  "dgSpecHash": "cFv9vp9N4fPjzIzwNat65SyLHa7UGM2fZDUGfcRIS9VPdvyBeO1iKKSq1hoqCNApU5ibS48JIR0bI8SIAiZAtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\fobja\\Documents\\GitHub\\ArchaiCharacterBuilder\\Domain\\Archai.csproj",
   "expectedPackageFiles": [
     "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "c:\\program files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
